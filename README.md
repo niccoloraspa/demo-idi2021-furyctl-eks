@@ -55,6 +55,13 @@ export AWS_DEFAULT_REGION=
 
 5. Create an S3 Bucket to hold the Terraform state.
 
+```bash
+aws s3api create-bucket \
+  --bucket fury-idi-2021 \
+  --region $AWS_DEFAULT_REGION \
+  --create-bucket-configuration LocationConstraint=$AWS_DEFAULT_REGION
+```
+
 You are all set ✌️.
 
 ## Step 1 - Automatic provisioning of a Kubernetes Clusters
