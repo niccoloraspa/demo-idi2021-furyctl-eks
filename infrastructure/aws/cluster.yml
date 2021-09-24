@@ -1,0 +1,29 @@
+kind: Cluster
+metadata:
+  name: fury-aws-demo
+spec:
+  version: 1.21
+  network: <VPC_ID>
+  subnetworks:
+  - <PRIVATE_SUBNET_1>
+  - <PRIVATE_SUBNET_2>
+  - <PRIVATE_SUBNET_3>
+  dmzCIDRRange:
+  - 10.0.0.0/16
+  sshPublicKey: <SSH_PUBLIC_KEY>
+  nodePools:
+  - name: fury
+    version: null
+    minSize: 3
+    maxSize: 3 
+    instanceType: t3.large
+    targetGroups: []
+    volumeSize: 50
+executor:
+  state:
+    backend: s3
+    config:
+      bucket: fury-idi-2021
+      key: furyctl/cluster
+      region: eu-west-1
+provisioner: eks
