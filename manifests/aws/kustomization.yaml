@@ -3,6 +3,7 @@ kind: Kustomization
 
 resources:
   - ../bases/
+  - ../../vendor/katalog/monitoring/eks-sm
   - resources/ingress.yml
 
 patchesStrategicMerge:

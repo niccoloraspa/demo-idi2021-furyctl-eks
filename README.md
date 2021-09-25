@@ -82,13 +82,13 @@ furyctl bootstrap apply
 
 ### Cluster provisioning phase
 
-1. Create the `fury-discovery-day-aws.ovpn` OpenVPN credentials file with `furyagent`:
+1. Create the `fury-idi-2021-aws.ovpn` OpenVPN credentials file with `furyagent`:
 
 ```bash
-furyagent configure openvpn-client \ 
+furyagent configure openvpn-client \
   --client-name fury \
   --config /demo/infrastructure/aws/bootstrap/secrets/furyagent.yml \
-  > fury-discovery-day-aws.ovpn
+  > fury-idi-2021-aws.ovpn
 ```
 
 2. Check that the `fury` user is now listed:
@@ -96,7 +96,7 @@ furyagent configure openvpn-client \
 ```bash
 furyagent configure openvpn-client \
   --list \
-  --config /demo/infrastructure/bootstrap/secrets/furyagent.yml
+  --config /demo/infrastructure/aws/bootstrap/secrets/furyagent.yml
 ```
 
 3. Connect to the OpenVPN Server.
