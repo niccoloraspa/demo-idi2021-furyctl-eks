@@ -24,7 +24,6 @@ To follow this tutorial, you need:
 
 - **Docker** - a [Docker image]([fury-on-gke-dockerfile]) containing `furyctl` and all the necessary tools is provided.
 - **OpenVPN Client** - [Tunnelblick][tunnelblick] (on macOS) or [OpenVPN Connect][openvpn-connect] (for other OS) are recommended.
-- **GCP Access Credentials**
 - **AWS Access Credentials**
 
 ### Setup and initialize the environment
@@ -36,7 +35,7 @@ To follow this tutorial, you need:
 ```bash
 docker run -ti --rm \
   -v $PWD:/demo \
-  registry.sighup.io/delivery/fury-getting-started:latest
+  registry.sighup.io/delivery/fury-getting-started:0.16
 ```
 
 3. Clone [this repository][https://github.com/nikever/demo-idi2021-furyctl-eks] containing all the example code used in this tutorial:
