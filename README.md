@@ -79,6 +79,8 @@ furyctl bootstrap apply
 
 3. Inspect the output for VPC ID and Private Subnets ID
 
+> 🚀 The provisioner uses under the hood [this Terraform module](https://github.com/sighupio/fury-eks-installer/tree/master/modules/vpc-and-vpn)
+
 ### Cluster provisioning phase
 
 1. Create the `fury-idi-2021-aws.ovpn` OpenVPN credentials file with `furyagent`:
@@ -116,6 +118,8 @@ furyctl cluster apply
 export KUBECONFIG=/demo/infrastructure/aws/cluster/secrets/kubeconfig
 kubectl get nodes
 ```
+
+> 🚀 The provisioner uses under the hood [this Terraform module](https://github.com/sighupio/fury-eks-installer/tree/master/modules/eks)
 
 ## Step 2 - Download fury modules
 
@@ -219,14 +223,14 @@ We hope you enjoyed this tour of Fury!
 
 ### Issues/Feedback
 
-In case your ran into any problems feel free to open a issue here in GitHub.
+In case your ran into any problems feel free to open a  issue here in GitHub.
 
 ### Where to go next?
 
 More on-depth tutorials:
 
 - [Fury on GKE][fury-on-gke]
-- [Fury on GKE][fury-on-eks]
+- [Fury on EKS][fury-on-eks]
 - [Fury on Minikube][fury-on-minikube]
 
 More about Fury:
