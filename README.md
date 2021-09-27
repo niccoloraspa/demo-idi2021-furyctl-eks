@@ -35,10 +35,10 @@ To follow this tutorial, you need:
 ```bash
 docker run -ti --rm \
   -v $PWD:/demo \
-  registry.sighup.io/delivery/fury-getting-started:0.16
+  registry.sighup.io/delivery/fury-getting-started:0.1.6
 ```
 
-3. Clone [this repository][https://github.com/nikever/demo-idi2021-furyctl-eks] containing all the example code used in this tutorial:
+3. Clone [this repository](https://github.com/nikever/demo-idi2021-furyctl-eks) containing all the example code used in this tutorial:
 
 ```bash
 git clone https://github.com/nikever/demo-idi2021-furyctl-eks
@@ -213,6 +213,16 @@ for tg in $target_groups ; do aws elbv2 delete-target-group --target-group-arn $
 ```bash
 cd /demo/infrastructure/aws/
 furyctl bootstrap destroy
+```
+
+3. Delete the bucket:
+
+```bash
+aws s3api delete-objects \
+  --bucket fury-idi-2021 \
+  --delete "$(aws s3api list-object-versions --bucket fury-idi-2021 --query='{Objects: Versions[].{Key:Key,VersionId:VersionId}}')"
+
+aws s3api delete-bucket --bucket fury-idi-2021
 ```
 
 ## Conclusions
