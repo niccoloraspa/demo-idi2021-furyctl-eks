@@ -218,6 +218,12 @@ furyctl bootstrap destroy
 3. Delete the bucket:
 
 ```bash
+# Delete objects
+aws s3api delete-objects \
+  --bucket fury-idi-2021 \
+  --delete "$(aws s3api list-object-versions --bucket fury-idi-2021 --query='{Objects: Versions[].{Key:Key,VersionId:VersionId}}')"
+
+# Delete bucket
 aws s3api delete-bucket --bucket fury-idi-2021
 ```
 
